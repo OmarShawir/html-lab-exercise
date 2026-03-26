@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Contact Omar">
+    <title>Contact Me</title>
+</head>
+<body>
+
+    <h2>Contact Me</h2>
+
+    <form action="#" method="post">
+
+        <fieldset style="padding: 20px; border: 2px solid #800f2f;">
+            <legend style="font-size: 18px; color: #800f2f;">Personal Info</legend>
+
+            <label for="fullname">Full Name:</label><br>
+            <input type="text" id="fullname" name="fullname"
+                   style="border: 2px solid #800f2f; padding: 6px; font-size: 14px;"
+                   placeholder="Your full name"
+                   required maxlength="60"><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"
+                   style="border: 2px solid #800f2f; padding: 6px; font-size: 14px;"
+                   placeholder="your@email.com"
+                   required><br><br>
+
+            <label for="phone">Phone:</label><br>
+            <input type="tel" id="phone" name="phone"
+                   style="border: 2px solid #800f2f; padding: 6px; font-size: 14px;"
+                   placeholder="+60 12 345 6789"><br><br>
+
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" name="age"
+                   min="16" max="99"
+                   style="border: 2px solid #800f2f; padding: 6px; font-size: 14px;"
+                   placeholder="ur age"><br><br>
+
+            <label for="dob">Date of Birth:</label><br>
+            <input type="date" id="dob" name="dob" style="border: 2px solid #800f2f; padding: 6px; font-size: 14px;"><br><br>
+
+            <label for="satisfaction">Satisfaction Level:</label><br>
+            <input type="range" id="satisfaction" name="satisfaction"
+                   min="1" max="10" style="border: 2px solid #800f2f; padding: 6px; font-size: 14px;"><br><br>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset style="padding: 20px; border: 2px solid #800f2f;">
+            <legend>Message Details</legend>
+
+            <label for="subject">Subject:</label><br>
+            <select id="subject" name="subject" style="border: 2px solid #800f2f; padding: 6px; font-size: 14px;" required>
+                <optgroup label="General">
+                    <option value="hello">Say Hello</option>
+                    <option value="feedback">Feedback</option>
+                </optgroup>
+                <optgroup label="Work">
+                    <option value="job">Job Offer</option>
+                    <option value="collab">Collaboration</option>
+                </optgroup>
+            </select><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message"
+                      placeholder="Write your message here..."
+                      style="background-color: #f0f0f0; border: 2px solid #800f2f; padding: 6px; font-size: 14px;"
+                      required maxlength="500" ></textarea><br><br>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset style="padding: 20px; border: 2px solid #800f2f;">
+            <legend>Interests</legend>
+
+            <input type="checkbox" id="web" name="interests" value="web">
+            <label for="web">Web Development</label><br>
+
+            <input type="checkbox" id="mobile" name="interests" value="mobile">
+            <label for="mobile">Mobile Apps</label><br>
+
+            <input type="checkbox" id="ai" name="interests" value="ai">
+            <label for="ai">Artificial Intelligence</label><br>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset style="padding: 20px; border: 2px solid #800f2f;">
+            <legend>Preferred Contact Method</legend>
+
+            <input type="radio" id="contact-email" name="contact-method" value="email">
+            <label for="contact-email">Email</label><br>
+
+            <input type="radio" id="contact-phone" name="contact-method" value="phone">
+            <label for="contact-phone">Phone</label><br>
+
+            <input type="radio" id="contact-whatsapp" name="contact-method" value="whatsapp">
+            <label for="contact-whatsapp">WhatsApp</label><br>
+
+        </fieldset>
+
+        <br>
+        <button type="submit" style="padding: 10px 20px; border: 2px solid #800f2f; border-radius: 5px; background-color: #800f2f; color: white; cursor: pointer;">Send Message</button>
+
+    </form>
+
+</body>
+</html>
