@@ -11,48 +11,42 @@
 
     <form action="#" method="post">
 
-        <fieldset style="padding: 20px; border: 2px solid #800f2f;">
-            <legend style="font-size: 18px; color: #800f2f;">Personal Info</legend>
+        <fieldset>
+            <legend >Personal Info</legend>
 
             <label for="fullname">Full Name:</label><br>
             <input type="text" id="fullname" name="fullname"
-                   style="border: 2px solid #800f2f; padding: 6px; font-size: 14px;"
                    placeholder="Your full name"
                    required maxlength="60"><br><br>
 
             <label for="email">Email:</label><br>
             <input type="email" id="email" name="email"
-                   style="border: 2px solid #800f2f; padding: 6px; font-size: 14px;"
                    placeholder="your@email.com"
                    required><br><br>
 
             <label for="phone">Phone:</label><br>
-            <input type="tel" id="phone" name="phone"
-                   style="border: 2px solid #800f2f; padding: 6px; font-size: 14px;"
-                   placeholder="+60 12 345 6789"><br><br>
+            <input type="tel" id="phone" name="phone"><br><br>
 
             <label for="age">Age:</label><br>
             <input type="number" id="age" name="age"
-                   min="16" max="99"
-                   style="border: 2px solid #800f2f; padding: 6px; font-size: 14px;"
-                   placeholder="ur age"><br><br>
+                   min="16" max="99"><br><br>
 
             <label for="dob">Date of Birth:</label><br>
-            <input type="date" id="dob" name="dob" style="border: 2px solid #800f2f; padding: 6px; font-size: 14px;"><br><br>
+            <input type="date" id="dob" name="dob"><br><br>
 
             <label for="satisfaction">Satisfaction Level:</label><br>
             <input type="range" id="satisfaction" name="satisfaction"
-                   min="1" max="10" style="border: 2px solid #800f2f; padding: 6px; font-size: 14px;"><br><br>
+                   min="1" max="10"><br><br>
 
         </fieldset>
 
         <br>
 
-        <fieldset style="padding: 20px; border: 2px solid #800f2f;">
+        <fieldset >
             <legend>Message Details</legend>
 
             <label for="subject">Subject:</label><br>
-            <select id="subject" name="subject" style="border: 2px solid #800f2f; padding: 6px; font-size: 14px;" required>
+            <select id="subject" name="subject" required>
                 <optgroup label="General">
                     <option value="hello">Say Hello</option>
                     <option value="feedback">Feedback</option>
@@ -64,16 +58,13 @@
             </select><br><br>
 
             <label for="message">Message:</label><br>
-            <textarea id="message" name="message"
-                      placeholder="Write your message here..."
-                      style="background-color: #f0f0f0; border: 2px solid #800f2f; padding: 6px; font-size: 14px;"
-                      required maxlength="500" ></textarea><br><br>
+            <textarea id="message" name="message" placeholder="Write your message here..."></textarea><br><br>
 
         </fieldset>
 
         <br>
 
-        <fieldset style="padding: 20px; border: 2px solid #800f2f;">
+        <fieldset >
             <legend>Interests</legend>
 
             <input type="checkbox" id="web" name="interests" value="web">
@@ -89,7 +80,7 @@
 
         <br>
 
-        <fieldset style="padding: 20px; border: 2px solid #800f2f;">
+        <fieldset >
             <legend>Preferred Contact Method</legend>
 
             <input type="radio" id="contact-email" name="contact-method" value="email">
@@ -104,7 +95,7 @@
         </fieldset>
 
         <br>
-        <button type="submit" style="padding: 10px 20px; border: 2px solid #800f2f; border-radius: 5px; background-color: #800f2f; color: white; cursor: pointer;">Send Message</button>
+        <button type="submit">Send Message</button>
 
     </form>
 
