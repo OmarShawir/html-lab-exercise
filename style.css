@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;600&display=swap');
-
 /* ============================================
    BREAKPOINTS
    mobile-first base: 320px and up (default)
    tablet: @media (min-width: 600px)
    desktop: @media (min-width: 1024px)
 ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;600&display=swap');
 
 :root {
     --color-primary:   #1a1a2e;
@@ -38,6 +38,11 @@ body {
     font-size: 1.6rem;
     color: var(--color-text);
     background-color: var(--color-surface);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* ===== TASK 2: Typography & Box Model ===== */
@@ -123,12 +128,14 @@ button {
 
 nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+    gap: var(--space-sm);
 }
 
 .site-logo {
@@ -142,15 +149,17 @@ nav {
 
 .nav-links {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
     gap: var(--space-sm);
     list-style: none;
     margin: 0;
     padding: 0;
-    justify-content: flex-end;
+    width: 100%;
 }
 
 .nav-links a {
+    display: inline-block;
     color: var(--color-accent);
     padding: var(--space-sm) var(--space-md);
     border-radius: 4px;
@@ -172,9 +181,9 @@ nav {
 /* Header as Flexbox row */
 .hero {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: var(--space-md);
 }
@@ -208,7 +217,7 @@ header img {
 
 .page-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: 1fr;
     gap: var(--space-md);
     align-items: stretch;
 }
@@ -249,12 +258,12 @@ header img {
 
 .skills-layout {
     display: grid;
-    grid-template-columns: 1fr 280px;
+    grid-template-columns: 1fr;
     gap: var(--space-md);
 }
 
 .skills-intro {
-    grid-column: span 2;
+    grid-column: 1 / -1;
     background-color: #ffffff;
     border-radius: 12px;
     padding: var(--space-md);
@@ -271,4 +280,43 @@ header img {
 
 .skills-sidebar ul {
     padding-left: 2rem;
+}
+
+@media (min-width: 600px) {
+    .page-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        width: auto;
+    }
+
+    .page-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .skills-layout {
+        grid-template-columns: 1fr 280px;
+    }
+
+    .skills-intro {
+        grid-column: span 2;
+    }
 }
