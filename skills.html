@@ -4,16 +4,39 @@
     <meta charset="UTF-8">
     <meta name="description" content="Skills of Omar">
     <title>Skills</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav>
-        <ul>
-            <li><a href="#top-skills">Top Skills</a></li>
-            <li><a href="#technologies">Technologies</a></li>
-            <li><a href="#glossary">Glossary</a></li>
+        <a class="site-logo" href="index.html">Omar Shawir</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a class="active" href="skills.html">Skills</a></li>
+            <li><a href="academic.html">Academic</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
+
+    <header class="hero">
+        <div class="hero-text">
+            <h1>Skills</h1>
+            <p>Core strengths, technologies, and quick glossary</p>
+        </div>
+        <div class="hero-image-placeholder" aria-label="Skills placeholder">Code</div>
+    </header>
+
+    <main>
+
+    <div class="skills-layout">
+    <section class="skills-intro">
+        <h2>Skills Overview</h2>
+        <p>This page uses a CSS Grid layout with a wider main area and a focused sidebar for quick navigation and highlights.</p>
+    </section>
+
+    <section class="skills-main">
 
     <h2 id="top-skills">Top Skills</h2>
     <ol type="I" start="3" reversed>
@@ -54,6 +77,23 @@
         <dt>DOM</dt>
         <dd>Document Object Model — the tree structure of an HTML page.</dd>
     </dl>
+
+    </section>
+
+    <aside class="skills-sidebar" aria-label="Skills quick links and highlights">
+        <h2>Quick Sidebar</h2>
+        <ul>
+            <li><a href="#top-skills">Top Skills</a></li>
+            <li><a href="#technologies">Technologies</a></li>
+            <li><a href="#glossary">Glossary</a></li>
+        </ul>
+
+        <h3>Current Focus</h3>
+        <p>Building strong foundations in software design, full-stack web development, and collaborative engineering practice.</p>
+    </aside>
+    </div>
+
+    </main>
 
 </body>
 </html>

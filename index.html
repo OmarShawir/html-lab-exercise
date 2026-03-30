@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="description" content="Personal portfolio of Omar">
     <title>Omar's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Omar Nasreldin Mahgoub Shawir</h1>
-        <p>Software Engineer Student at UTM</p>
-    </header>
-
     <nav>
-        <ul>
+        <a class="site-logo" href="index.html">Omar Shawir</a>
+        <ul class="nav-links">
+            <li><a class="active" href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="skills.html">Skills</a></li>
             <li><a href="academic.html">Academic</a></li>
@@ -22,14 +20,48 @@
         </ul>
     </nav>
 
+    <header class="hero">
+        <div class="hero-text">
+            <h1>Omar Nasreldin Mahgoub Shawir</h1>
+            <p>Software Engineer Student at UTM</p>
+        </div>
+        <div class="hero-image-placeholder" aria-label="Profile image placeholder">Profile</div>
+    </header>
+
     <main>
 
-        <section id="about">
-            
-        </section>
+        <section class="page-cards" aria-label="Site pages overview">
+            <h2>Explore My Portfolio</h2>
 
-        <section id="skills">
-            
+            <article class="page-card">
+                <h3>About Me</h3>
+                <p>Learn about my background, interests, and journey in software engineering.</p>
+                <a class="card-link" href="about.html">Open About</a>
+            </article>
+
+            <article class="page-card">
+                <h3>Skills</h3>
+                <p>See my top strengths, core technologies, and the terms I use every day.</p>
+                <a class="card-link" href="skills.html">Open Skills</a>
+            </article>
+
+            <article class="page-card">
+                <h3>Academic</h3>
+                <p>Review my academic record, credits, and grades across recent semesters.</p>
+                <a class="card-link" href="academic.html">Open Academic</a>
+            </article>
+
+            <article class="page-card">
+                <h3>Projects</h3>
+                <p>Browse selected project snapshots and links to my public development work.</p>
+                <a class="card-link" href="projects.html">Open Projects</a>
+            </article>
+
+            <article class="page-card">
+                <h3>Contact</h3>
+                <p>Send a message about internships, collaboration opportunities, or feedback.</p>
+                <a class="card-link" href="contact.html">Open Contact</a>
+            </article>
         </section>
 
     </main>

@@ -1,0 +1,442 @@
+/* ============================================
+   BREAKPOINTS
+   mobile-first base: 320px and up (default)
+   tablet: @media (min-width: 600px)
+   desktop: @media (min-width: 1024px)
+============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;600&display=swap');
+
+:root {
+    --color-primary:   #1a1a2e;
+    --color-secondary: #16213e;
+    --color-accent:    #e8d5b7;
+    --color-accent2:   #118ab2;
+    --color-text:      #335c67;
+    --color-muted:     #cccccc;
+    --color-surface:   #f5f4f0;
+    --font-body:       'Lora', Georgia, serif;
+    --font-heading:    'Playfair Display', serif;
+    --space-sm:        0.8rem;
+    --space-md:        1.6rem;
+    --space-lg:        3.2rem;
+}
+
+/* Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    font-size: 1.6rem;
+    color: var(--color-text);
+    background-color: var(--color-surface);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== TASK 2: Typography & Box Model ===== */
+
+h1 { font-family: var(--font-heading); font-size: 4rem; line-height: 1.2; color: var(--color-primary); }
+h2 { font-family: var(--font-heading); font-size: 3rem; line-height: 1.3; color: var(--color-primary); }
+h3 { font-family: var(--font-heading); font-size: 2.4rem; line-height: 1.4; color: var(--color-secondary); }
+h4 { font-family: var(--font-heading); font-size: 2rem;   line-height: 1.4; color: var(--color-secondary); }
+p  { font-size: 1.6rem; line-height: 1.8; color: var(--color-text); }
+small    { font-size: 1.2rem; color: var(--color-muted); }
+caption  { font-size: 1.4rem; color: var(--color-muted); }
+
+blockquote {
+    font-size: 1.8rem;
+    line-height: 1.7;
+    color: var(--color-secondary);
+    /* padding pushes content inside — margin separates from siblings */
+    padding: var(--space-md) var(--space-lg);
+    margin: var(--space-md) 0;
+    border-left: 4px solid var(--color-accent);
+    background-color: var(--color-accent);
+    border-radius: 4px;
+}
+
+/* Landmark backgrounds */
+header {
+    /* padding: space inside; margin: none needed — full width block */
+    background-color: var(--color-primary);
+    color: var(--color-accent);
+    padding: var(--space-lg) var(--space-md);
+}
+
+header h1 { color: var(--color-accent); }
+
+nav {
+    background-color: var(--color-secondary);
+    /* padding: space inside the bar */
+    padding: var(--space-sm) var(--space-md);
+}
+
+main {
+    /* margin: separates main from nav/footer; padding: inner breathing room */
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: var(--space-lg) var(--space-md);
+}
+
+footer {
+    background-color: var(--color-primary);
+    color: var(--color-accent);
+    /* padding: space inside footer; margin-top: separates from main */
+    padding: var(--space-md);
+    margin-top: var(--space-lg);
+    text-align: center;
+}
+
+/* Links — all 4 states */
+a:link    { color: var(--color-accent2); text-decoration: none; }
+a:visited { color: var(--color-muted); }
+a:hover   { color: var(--color-accent); text-decoration: underline; }
+a:active  { color: var(--color-accent2); opacity: 0.7; }
+
+/* Border radius on buttons, cards, nav links */
+button {
+    border-radius: 8px;
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--color-accent2);
+    color: var(--color-surface);
+    border: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+}
+
+/* Card with box-shadow */
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: var(--space-md);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ===== TASK 3: Flexbox Nav & Header ===== */
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+    gap: var(--space-sm);
+}
+
+.site-logo {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: var(--space-sm);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.nav-links a {
+    display: inline-block;
+    color: var(--color-accent);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 4px;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--color-primary);
+    background-color: var(--color-accent);
+    text-decoration: none;
+}
+
+/* Active page link */
+.nav-links a.active {
+    border-bottom: 3px solid var(--color-accent2);
+    color: var(--color-accent);
+}
+
+/* Header as Flexbox row */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+}
+
+.hero-text {
+    flex: 1 1 300px;
+}
+
+.hero-image-placeholder {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px dashed var(--color-accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-accent);
+    font-weight: 600;
+    letter-spacing: 1px;
+    flex: 0 0 auto;
+}
+
+header img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* ===== TASK 4: CSS Grid Layouts ===== */
+
+.page-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    align-items: stretch;
+}
+
+.page-cards h2 {
+    grid-column: 1 / -1;
+    margin: 0;
+}
+
+.page-card {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: var(--space-sm);
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: var(--space-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    height: 100%;
+}
+
+.page-card:hover {
+    transform: translateY(-4px);
+}
+
+.page-card h3 {
+    margin: 0;
+}
+
+.page-card p {
+    margin: 0;
+}
+
+.card-link {
+    justify-self: start;
+    font-weight: 600;
+}
+
+.skills-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+}
+
+.skills-intro {
+    grid-column: 1 / -1;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: var(--space-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.skills-main,
+.skills-sidebar {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: var(--space-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.skills-sidebar ul {
+    padding-left: 2rem;
+}
+
+@media (min-width: 600px) {
+    .page-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        width: auto;
+    }
+
+    .page-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .skills-layout {
+        grid-template-columns: 1fr 280px;
+    }
+
+    .skills-intro {
+        grid-column: span 2;
+    }
+}
+
+/* ===== TASK 6: Form Styling & Visual Polish ===== */
+
+form {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: var(--space-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+fieldset {
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+    padding: var(--space-md);
+}
+
+legend {
+    font-family: var(--font-heading);
+    color: var(--color-secondary);
+    padding: 0 0.6rem;
+}
+
+input,
+select,
+textarea,
+button {
+    font-family: var(--font-body);
+    font-size: 1.6rem;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+select,
+textarea {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border: 1px solid #bfc7cf;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: var(--color-text);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: var(--color-accent2);
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+    border-color: var(--color-accent2);
+    box-shadow: 0 0 0 3px rgba(17, 138, 178, 0.25);
+}
+
+textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+form button[type="submit"] {
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+form button[type="submit"]:hover {
+    background-color: #0d6f90;
+}
+
+form button[type="submit"]:active {
+    transform: scale(0.97);
+}
+
+blockquote::before {
+    content: '"';
+    font-family: var(--font-heading);
+    font-size: 4.2rem;
+    line-height: 1;
+    color: var(--color-secondary);
+    margin-right: 0.8rem;
+    vertical-align: middle;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin-top: 0.8rem;
+    background-color: var(--color-accent2);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+th,
+td {
+    border: 1px solid #d6dbe0;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f0f6f8;
+}
+
+.skills-main ul li {
+    border-top: 1px solid #d6dbe0;
+    border-bottom: 1px solid #d6dbe0;
+    padding: 0.6rem 0;
+}
+
+.skills-main ul li:first-child {
+    border-top: none;
+}
+
+.skills-main ul li:last-child {
+    border-bottom: none;
+}
